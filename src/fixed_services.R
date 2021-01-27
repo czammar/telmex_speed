@@ -74,6 +74,7 @@ df$DESCRIPCION <- tolower(df$DESCRIPCION)
 ## 100539      TELÉFONOS DEL NOROESTE, S.A. DE C.V.
 ## 102992      TELÉFONOS DE MÉXICO, S.A.B. DE C.V.
 
+
 # Filtering Telmex data
 df_telmex <- df %>% select(ID_TARIFA, ID_OPERADOR, CONCESIONARIO, 
               TARIFA, NOMBRE_TARIFA, INICIO_VIGENCIA_C, 
