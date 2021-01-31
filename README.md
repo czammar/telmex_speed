@@ -50,7 +50,7 @@ So, this repo explore how the offered downstream speed in its broanband packages
   * The median publicited speed of Telmex/Telnor packages is still under 50 Mbps;
   * This is reflected in the fact that, the most popular package [Paquete 389](https://telmex.com/web/hogar/paquetes-de-internet-con-disney?gclid=EAIaIQobChMIyujUsNvE7gIVxP_jBx3ypQbPEAAYASAAEgJDk_D_BwE&gclsrc=aw.ds) of Telmex and Telnor, offers just 30 Mbps ~ 19 USD/Month.
 
-  
+* Nowadays, Telmex offers a package with 400 Mbps, probably due competitive preasure and changes of habits on customers behaviour in broadband needs.  
 
 
 # 3. How to run it
