@@ -174,8 +174,26 @@ df_AEP_transform$days<- lubridate::as_date(df_AEP_transform$days)
 
 #
 df_dynamics <-df_AEP_transform %>% group_by(days) %>% 
-  summarize(min_speed = min(SPEED), max_speed = max (SPEED)) %>% ungroup()
+  summarize(min_speed = min(SPEED), 
+            max_speed = max (SPEED),
+            median_speed = median(SPEED))
+
+df_dynamics <- df_dynamics %>% gather(kpi,mbps,-days)
+
+# Plot
+caption_text <- 'Source: Own elaboration with data from publical rates data 
+from Instituto Federal de Telecomunicaciones of Mexico (IFT) | @czammar'
+
+ggplot(df_dynamics, aes(x = days, y = mbps)) + 
+  geom_line(aes(color = kpi), size = 1) +
+  scale_color_manual(values = c("#00AFBB", "#FC4E07","#E7B800")) +
+  theme_minimal() +
+  labs(title="Downstream speed (in Mbps) of Telmex/Telnor \n  Broandband packages Dic/2015-Jan/2021", 
+       subtitle=paste0("", "\nLast Update: ", df_dynamics$days[nrow(df_dynamics)]),
+       caption=caption_text,
+       x="",
+       y="Mbps included in packages")
 
 
-#df_to_plot %>% left_join(df_telmex_speed, by='INICIO_VIGENCIA_C')
-# df_telmex %>% select(INICIO_VIGENCIA_C, SPEED) %>% arrange(INICIO_VIGENCIA_C) %>% drop_na() %>% group_by(INICIO_VIGENCIA_C) %>% summarize(min_speed = min(SPEED), max_speed = max (SPEED)) %>% ungroup()
+ggsave(filename = paste0("~/github/telmex_speed/images/", "mpbs_telmex_telnor_2021.png"),
+       width = 10, height = 8, dpi = 500)
