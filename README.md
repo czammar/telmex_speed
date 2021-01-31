@@ -43,7 +43,7 @@ So, this repo explore how the offered downstream speed in its broanband packages
 
   * Expand the offer to include packages with more Mbps (until 200 Mbps), 
   * They also increase the Mbps in their packages *without changing the price*.
-  * Introduce a chaper service, with 3 Mbpbs.
+  * Introduce a cheaper service, with 3 Mbpbs.
 
 * Even with all this dynamics:
 
